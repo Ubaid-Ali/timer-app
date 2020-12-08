@@ -6,30 +6,28 @@ import TimerButton from '../TimerButton/TimerButton'
 
 const Timer = () => {
 
-  function startTimer() {
+  const startTimer = () => {
     console.log('Starting timer.');
   }
 
-  function stopTimer() {
+  const stopTimer = () => {
     console.log('Stopping timer.');
   }
 
-  function resetTimer() {
+  const resetTimer = () => {
     console.log('Resetting timer.');
   }
 
   return (
     <div className="timer-container">
-      <div className="timer-display">
-
-      </div>
-      <div className="button-container">
-        <TimerButton buttonAction={startTimer} buttonValue={"start"} />
-        <TimerButton buttonAction={stopTimer} buttonValue={"stop"} />
-        <TimerButton buttonAction={resetTimer} buttonValue={"reset"} />
+      <div className="time-display"></div>
+      <div className="timer-button-container">
+        <TimerButton buttonAction={startTimer} buttonValue={'Start'} />
+        <TimerButton buttonAction={stopTimer} buttonValue={'Stop'} />
+        <TimerButton buttonAction={resetTimer} buttonValue={'Reset'} />
       </div>
     </div>
-  )
+  );
 }
 
 export default Timer;

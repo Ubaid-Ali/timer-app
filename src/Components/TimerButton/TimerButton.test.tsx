@@ -1,18 +1,20 @@
-import React from 'react'
-import {shallow} from 'enzyme'
-import TimerButton from './TimerButton'
+import React from "react"
+import { shallow } from "enzyme"
+import TimerButton from "./TimerButton"
 
+describe("TimerButton", () => {
+  let container
 
-describe('TimerButton', () => {
+  beforeEach(() => {
+    container = shallow(
+      <TimerButton
+        buttonAction={jest.fn()}
+        buttonValue={""}
+      />
+    )
+  })
 
-    let container: any;
-
-    beforeEach(() => {
-        container = shallow(<TimerButton buttonAction={jest.fn} buttonValue={""} />)
-    })
-
-    it("should render a </div>", () => {
-        expect(container.find("div").length).toBeGreaterThanOrEqual(1)
-    })
+  it("should render a <div />", () => {
+    expect(container.find("div").length).toBeGreaterThanOrEqual(1)
+  })
 })
-

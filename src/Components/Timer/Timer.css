@@ -4,3 +4,9 @@
 	height: var(--timer-height);
 	width: var(--timer-width);
 }
+
+.timer-button-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
