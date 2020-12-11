@@ -73,17 +73,14 @@ class Timer extends Component <{}, typeState> {
         </div>
         <div className="timer-button-container">
           <TimerButton
-            className="start-timer"
             buttonAction={this.startTimer}
             buttonValue={'Start'}
           />
           <TimerButton
-            className="stop-timer"
             buttonAction={this.stopTimer}
             buttonValue={'Stop'}
           />
           <TimerButton
-            className="reset-timer"
             buttonAction={this.resetTimer}
             buttonValue={'Reset'}
           />

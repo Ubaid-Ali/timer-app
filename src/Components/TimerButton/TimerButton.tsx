@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './TimerButton.css'
 
-const TimerButton = ({ buttonAction, buttonValue, className }) => {
-    return (
-        <div className={`button-container ${className}`} onClick={() => buttonAction()}>
-            <p className="button-value"> {buttonValue} </p>
-        </div>
-    )
+interface type {
+    buttonAction: any
+    buttonValue: string
 }
 
-export default TimerButton;
+class TimerButton extends Component<any, type> {
+
+    render() {
+        let { buttonAction, buttonValue } = this.props
+        console.log('buttonAction', buttonAction)
+        return (
+            <div className="button-container" onClick={() => buttonAction()}>
+                <p className="button-value"> {buttonValue} </p>
+            </div>
+        )
+    }
+}
+
+export default TimerButton
