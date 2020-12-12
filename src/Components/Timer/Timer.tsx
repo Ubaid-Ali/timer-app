@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import './Timer.css';
 import TimerButton from '../TimerButton/TimerButton';
 
-
 interface typeState {
   minutes: number,
   seconds: number,
   isOn: boolean
 }
 
-class Timer extends Component <{}, typeState> {
+class Timer extends Component<{}, typeState> {
   myInterval: NodeJS.Timeout;
   constructor(props: typeState) {
     super(props);
@@ -65,6 +64,7 @@ class Timer extends Component <{}, typeState> {
 
   render = () => {
     const { minutes, seconds } = this.state;
+    const { startTimer, stopTimer, resetTimer } = this
 
     return (
       <div className="timer-container">
@@ -73,15 +73,18 @@ class Timer extends Component <{}, typeState> {
         </div>
         <div className="timer-button-container">
           <TimerButton
-            buttonAction={this.startTimer}
+            id="start-timer"
+            buttonAction={startTimer}
             buttonValue={'Start'}
           />
           <TimerButton
-            buttonAction={this.stopTimer}
+            data-testID="stop-timer"
+            buttonAction={stopTimer}
             buttonValue={'Stop'}
           />
           <TimerButton
-            buttonAction={this.resetTimer}
+            data-testID="reset-timer"
+            buttonAction={resetTimer}
             buttonValue={'Reset'}
           />
         </div>

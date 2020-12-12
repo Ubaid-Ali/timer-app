@@ -10,7 +10,6 @@ class TimerButton extends Component<any, type> {
 
     render() {
         let { buttonAction, buttonValue } = this.props
-        console.log('buttonAction', buttonAction)
         return (
             <div className="button-container" onClick={() => buttonAction()}>
                 <p className="button-value"> {buttonValue} </p>
